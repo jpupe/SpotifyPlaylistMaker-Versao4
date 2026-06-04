@@ -1,0 +1,25 @@
+# Credenciais e tokens
+.env
+.spotify_token.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Outputs
+*.csv
+*.xlsx
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

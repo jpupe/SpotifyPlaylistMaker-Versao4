@@ -1,0 +1,401 @@
+/* ============================================================
+   Spotify Playlist Maker — Tema escuro inspirado no Spotify
+   ============================================================ */
+
+/* Variáveis de cor */
+:root {
+    --spotify-green:   #1DB954;
+    --spotify-black:   #121212;
+    --spotify-dark:    #181818;
+    --spotify-card:    #282828;
+    --spotify-hover:   #333333;
+    --spotify-text:    #FFFFFF;
+    --spotify-muted:   #B3B3B3;
+    --spotify-border:  #404040;
+}
+
+/* Fundo geral */
+.stApp {
+    background-color: var(--spotify-black) !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: var(--spotify-dark) !important;
+    border-right: 1px solid var(--spotify-border);
+}
+
+/* Header da sidebar */
+.sidebar-header {
+    text-align: center;
+    padding: 1.5rem 0 1rem;
+    border-bottom: 1px solid var(--spotify-border);
+    margin-bottom: 1rem;
+}
+
+.sidebar-logo {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--spotify-text);
+    margin: 0;
+}
+
+.sidebar-subtitle {
+    font-size: 0.75rem;
+    color: var(--spotify-muted);
+}
+
+/* Avatar do usuário */
+.user-avatar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--spotify-card);
+    border-radius: 50px;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-avatar-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--spotify-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--spotify-black);
+    flex-shrink: 0;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--spotify-text);
+}
+
+/* Tela de landing */
+.landing-hero {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.landing-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.landing-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--spotify-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.landing-title span {
+    color: var(--spotify-green);
+}
+
+.landing-subtitle {
+    font-size: 1.1rem;
+    color: var(--spotify-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+    text-align: left;
+}
+
+.feature-card {
+    background: var(--spotify-card);
+    border-radius: 8px;
+    padding: 1.25rem;
+    border: 1px solid var(--spotify-border);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.feature-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--spotify-text);
+    margin-bottom: 0.3rem;
+}
+
+.feature-desc {
+    font-size: 0.8rem;
+    color: var(--spotify-muted);
+    line-height: 1.4;
+}
+
+/* Botão de login Spotify */
+.spotify-login-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--spotify-green);
+    color: var(--spotify-black) !important;
+    padding: 0.85rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: transform 0.1s, background 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.spotify-login-btn:hover {
+    background: #1ed760;
+    transform: scale(1.03);
+    color: var(--spotify-black) !important;
+}
+
+/* Cards de música */
+.track-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--spotify-card);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.4rem;
+    transition: background 0.15s;
+    border: 1px solid transparent;
+}
+
+.track-card:hover {
+    background: var(--spotify-hover);
+    border-color: var(--spotify-border);
+}
+
+.track-num {
+    font-size: 0.85rem;
+    color: var(--spotify-muted);
+    width: 20px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.track-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.track-img-placeholder {
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    background: var(--spotify-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.track-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--spotify-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist {
+    font-size: 0.8rem;
+    color: var(--spotify-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-album {
+    font-size: 0.75rem;
+    color: var(--spotify-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    flex-shrink: 0;
+}
+
+.track-duration {
+    font-size: 0.8rem;
+    color: var(--spotify-muted);
+    flex-shrink: 0;
+    text-align: right;
+    min-width: 38px;
+}
+
+.track-score {
+    font-size: 0.75rem;
+    color: var(--spotify-green);
+    flex-shrink: 0;
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Card de resultado */
+.result-card {
+    background: linear-gradient(135deg, #1a3a2a, var(--spotify-card));
+    border: 1px solid var(--spotify-green);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.result-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--spotify-text);
+    margin-bottom: 0.5rem;
+}
+
+.result-meta {
+    font-size: 0.9rem;
+    color: var(--spotify-muted);
+    margin-bottom: 1.5rem;
+}
+
+.result-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.result-stat {
+    text-align: center;
+}
+
+.result-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--spotify-green);
+    display: block;
+}
+
+.result-stat-label {
+    font-size: 0.75rem;
+    color: var(--spotify-muted);
+}
+
+/* Seção de título */
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--spotify-text);
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--spotify-border);
+}
+
+/* Badges de gênero */
+.genre-badge {
+    display: inline-block;
+    background: var(--spotify-card);
+    border: 1px solid var(--spotify-border);
+    border-radius: 50px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.78rem;
+    color: var(--spotify-text);
+    margin: 0.2rem;
+}
+
+/* Ajustes gerais do Streamlit */
+div[data-testid="stMarkdownContainer"] p {
+    color: var(--spotify-text);
+}
+
+.stButton > button {
+    background-color: var(--spotify-green) !important;
+    color: var(--spotify-black) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    padding: 0.6rem 2rem !important;
+    transition: all 0.2s !important;
+}
+
+.stButton > button:hover {
+    background-color: #1ed760 !important;
+    transform: scale(1.02) !important;
+}
+
+/* Inputs com tema escuro */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    background-color: var(--spotify-card) !important;
+    border-color: var(--spotify-border) !important;
+    color: var(--spotify-text) !important;
+    border-radius: 4px !important;
+}
+
+.stSelectbox > div > div {
+    background-color: var(--spotify-card) !important;
+    border-color: var(--spotify-border) !important;
+    color: var(--spotify-text) !important;
+}
+
+/* Sliders */
+.stSlider [data-baseweb="slider"] div[role="slider"] {
+    background: var(--spotify-green) !important;
+}
+
+/* Progress bar */
+.stProgress > div > div > div {
+    background-color: var(--spotify-green) !important;
+}
+
+/* Divider */
+hr {
+    border-color: var(--spotify-border) !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .landing-title {
+        font-size: 2rem;
+    }
+    .track-album {
+        display: none;
+    }
+}
